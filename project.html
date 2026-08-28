@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko" data-theme="system">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ZEIV의 브랜드, 디자인 시스템, 웹 프로젝트를 소개합니다."><meta name="theme-color" content="#f6f2ec">
+  <title>Project — ZEIV</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body data-page="project">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="ZEIV 홈">ZEIV<span>✦</span></a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false" data-menu-button><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-menu><a href="about.html" data-nav="about">About</a><a href="project.html" data-nav="project">Project</a><a href="awards.html" data-nav="awards">Awards</a><a href="news.html" data-nav="news">News</a></nav>
+    <div class="theme-switcher" role="group" aria-label="화면 테마"><button type="button" data-theme-choice="system">System</button><button type="button" data-theme-choice="light">Light</button><button type="button" data-theme-choice="dark">Dark</button></div>
+  </header>
+  <main id="main">
+    <section class="page-hero shell reveal">
+      <div><span class="page-label">02 · Project</span><h1>Selected<em>work.</em></h1></div>
+      <p>문제를 이해하고 방향을 정의한 뒤, 브랜드와 화면의 작은 디테일까지 이어간 작업을 소개합니다.</p>
+    </section>
+
+    <section class="project-index-section shell reveal" aria-labelledby="project-index-title">
+      <div class="project-index-heading">
+        <div><p class="eyebrow">Project index</p><h2 id="project-index-title">프로젝트 목차.</h2></div>
+        <p>프로젝트 이름을 선택하면 세부 목차가 열립니다.</p>
+      </div>
+      <div class="project-index-list">
+        <article class="project-index-item" id="sk-planet" data-project-entry>
+          <button class="project-index-toggle" type="button" aria-expanded="false" aria-controls="sk-planet-toc" data-project-toggle>
+            <span class="project-index-no">01</span>
+            <span class="project-index-title"><small>Tourism Research · Contents</small><strong>SK Planet</strong></span>
+            <span class="project-index-icon" aria-hidden="true"></span>
+          </button>
+          <div class="project-toc" id="sk-planet-toc" data-project-toc hidden>
+            <p>Table of contents</p>
+            <ol>
+              <li><span>01</span><strong>관광콘텐츠 사례 분석표</strong></li>
+              <li><span>02</span><strong>관광 자원 분류표</strong></li>
+              <li><span>03</span><strong>부산 관광리서치 노트</strong></li>
+              <li><span>04</span><strong>관광객 페르소나 분석표</strong></li>
+              <li><span>05</span><strong>관광객 고객 여정 지도</strong></li>
+              <li><span>06</span><strong>스토리텔링 계획서</strong></li>
+              <li><span>07</span><strong>콘텐츠 아이디어보드</strong></li>
+            </ol>
+          </div>
+        </article>
+        <!-- 이후 프로젝트는 data-project-entry 구조를 복제해 추가할 수 있습니다. -->
+      </div>
+    </section>
+
+    <div class="filter-bar shell reveal" aria-label="프로젝트 필터"><button class="filter-button active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="system">System</button><button class="filter-button" type="button" data-filter="web">Web</button></div>
+
+    <section class="section shell project-list">
+      <article class="project-case reveal" id="project-system" data-category="system">
+        <div class="case-visual"><img src="assets/astryx-cover.png" alt="부드러운 색감의 인터페이스 카드로 구성된 디자인 시스템"></div>
+        <div class="case-copy"><span class="pill">System · 2026</span><h2>Soft Interface<br>System</h2><p>서로 다른 화면과 기능이 한 제품처럼 느껴지도록, 간결한 구성과 섬세한 톤을 가진 공통 UI 언어를 설계했습니다.</p>
+          <dl class="case-details"><div><dt>Challenge</dt><dd>복잡한 기능을 차갑거나 무겁지 않게 전달하기</dd></div><div><dt>Direction</dt><dd>웜 아이보리, 미스트 블루, 블러시 피치와 둥근 컴포넌트</dd></div><div><dt>Role</dt><dd>Creative Direction · UI System · Prototype</dd></div><div><dt>Outcome</dt><dd>재사용 가능한 카드, 상태, 테마 구조의 시각 언어 구축</dd></div></dl>
+        </div>
+      </article>
+
+      <article class="project-case reveal" id="project-portfolio" data-category="web">
+        <div class="case-visual blue tall"><img src="assets/astryx-library.png" alt="파란 로고와 여러 인터페이스 예시가 있는 라이브러리 이미지"></div>
+        <div class="case-copy"><span class="pill">Web · 2026</span><h2>ZEIV<br>Digital Home</h2><p>작업을 나열하는 포트폴리오를 넘어, ZEIV가 어떤 태도로 디자인하는지 직접 느낄 수 있는 디지털 공간을 만들었습니다.</p>
+          <dl class="case-details"><div><dt>Challenge</dt><dd>작업, 태도, 연락 정보를 하나의 자연스러운 여정으로 연결하기</dd></div><div><dt>Direction</dt><dd>큰 타이포그래피, 여백, 차분한 카드와 부드러운 움직임</dd></div><div><dt>Role</dt><dd>Strategy · Design · Front-end</dd></div><div><dt>Feature</dt><dd>System / Light / Dark 테마와 반응형 멀티페이지 구성</dd></div></dl>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact shell reveal"><div><p class="eyebrow">Collaborate</p><h2>다음 작업을<br>함께 만들까요?</h2></div><div class="contact-side"><p>프로젝트의 규모보다 좋은 질문과 명확한 방향을 중요하게 생각합니다.</p><a class="button button-dark" href="mailto:jass10234@gmail.com">프로젝트 문의 <span>↗</span></a></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="brand" href="index.html">ZEIV<span>✦</span></a><p>Designing with clarity and care.</p><div><a href="about.html">About</a><a href="project.html">Project</a><a href="awards.html">Awards</a><a href="news.html">News</a></div><small>© <span data-year></span> ZEIV</small></footer>
+</body>
+</html>

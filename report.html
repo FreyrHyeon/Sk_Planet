@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SK플래닛 관광 콘텐츠 제작을 위한 부산 관광 자원 리서치 아카이브">
+  <meta name="theme-color" content="#f6f2ec">
+  <title>Report — ZEIV Tourism Archive</title>
+  <link rel="stylesheet" href="style.css?v=20260827-3">
+  <script src="script.js?v=20260827-3" defer></script>
+</head>
+<body data-page="report">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+
+  <header class="site-header report-site-header" data-header>
+    <a class="brand" href="index.html" aria-label="ZEIV 아카이브 홈">ZEIV<span aria-hidden="true">✦</span></a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false" data-menu-button>
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴" data-menu>
+      <a href="report.html" data-nav="report">Report</a>
+      <a href="contents.html" data-nav="contents">Contents</a>
+      <a href="sns.html" data-nav="sns">SNS</a>
+      <a href="final.html" data-nav="final">Project</a>
+    </nav>
+    <div class="report-header-actions">
+      <!-- 고정 UI: 이후 페이지 수정에서도 System / Light / Dark 설정을 유지합니다. -->
+      <div class="theme-switcher" role="group" aria-label="화면 테마" data-theme-switcher>
+        <button type="button" data-theme-choice="system">System</button>
+        <button type="button" data-theme-choice="light">Light</button>
+        <button type="button" data-theme-choice="dark">Dark</button>
+      </div>
+      <button class="login-mini" type="button" aria-label="로그인 기능 준비 중">Login</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero report-page-hero shell reveal">
+      <div>
+        <span class="page-label">01 · Tourism report</span>
+        <h1>Busan, viewed<em>with intent.</em></h1>
+      </div>
+      <div class="report-hero-copy">
+        <p>SK플래닛 관광 콘텐츠 제작을 위해 부산의 장소를 관찰하고, 체험 요소와 방문 맥락을 콘텐츠 관점으로 정리합니다.</p>
+        <dl>
+          <div><dt>Focus</dt><dd>문화 · 공간 · 로컬 경험</dd></div>
+          <div><dt>Archive</dt><dd>Research guide · 2026</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section shell destination-section" aria-labelledby="destination-title">
+      <div class="section-head reveal destination-heading">
+        <div>
+          <p class="eyebrow">Selected destinations</p>
+          <h2 id="destination-title">선정 관광 카드.</h2>
+        </div>
+        <p>카드를 선택하면 장소 소개부터 체험 프로그램, 방문자 후기까지 한 화면에서 살펴볼 수 있습니다.</p>
+      </div>
+
+      <div class="destination-filters reveal" aria-label="관광지 카테고리 필터">
+        <button class="destination-filter is-active" type="button" data-place-filter="all" aria-pressed="true">전체</button>
+        <button class="destination-filter" type="button" data-place-filter="art" aria-pressed="false">몰입형 예술</button>
+        <button class="destination-filter" type="button" data-place-filter="market" aria-pressed="false">복합문화공간</button>
+        <button class="destination-filter" type="button" data-place-filter="village" aria-pressed="false">해안마을</button>
+      </div>
+
+      <div class="destination-grid">
+        <button class="destination-card reveal" type="button" data-place-card data-place="arte" data-place-category="art" aria-haspopup="dialog" aria-controls="tourism-detail-dialog">
+          <span class="destination-image">
+            <img src="assets/images/report/arte-museum.png" alt="푸른 파도 미디어아트가 펼쳐진 아르떼뮤지엄 부산 전시장">
+            <span class="destination-open" aria-hidden="true">View <i>↗</i></span>
+          </span>
+          <span class="destination-meta">
+            <span><small>01 · Immersive art</small><strong>아르떼뮤지엄 부산</strong></span>
+            <span class="destination-area">영도구</span>
+          </span>
+        </button>
+
+        <button class="destination-card reveal" type="button" data-place-card data-place="millac" data-place-category="market" aria-haspopup="dialog" aria-controls="tourism-detail-dialog">
+          <span class="destination-image">
+            <img src="assets/images/report/millac-market.png" alt="유리 외관이 인상적인 부산 밀락더마켓 전경">
+            <span class="destination-open" aria-hidden="true">View <i>↗</i></span>
+          </span>
+          <span class="destination-meta">
+            <span><small>02 · Culture market</small><strong>밀락더마켓</strong></span>
+            <span class="destination-area">수영구</span>
+          </span>
+        </button>
+
+        <button class="destination-card reveal" type="button" data-place-card data-place="huinnyeoul" data-place-category="village" aria-haspopup="dialog" aria-controls="tourism-detail-dialog">
+          <span class="destination-image">
+            <img src="assets/images/report/huinnyeoul-village.png" alt="바다와 맞닿은 흰여울문화마을의 골목길">
+            <span class="destination-open" aria-hidden="true">View <i>↗</i></span>
+          </span>
+          <span class="destination-meta">
+            <span><small>03 · Coastal village</small><strong>흰여울문화마을</strong></span>
+            <span class="destination-area">영도구</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="report-note shell reveal" aria-label="리서치 활용 안내">
+      <span>Archive note</span>
+      <p>이 페이지의 프로그램과 후기는 콘텐츠 구조 확인을 위한 기획용 샘플입니다. 실제 운영 일정과 이용 조건은 방문 전 각 장소의 공식 채널에서 확인해 주세요.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <a class="brand" href="index.html">ZEIV<span>✦</span></a>
+    <p>Tourism contents archive for SK Planet.</p>
+    <div><a href="report.html">Report</a><a href="contents.html">Contents</a><a href="sns.html">SNS</a><a href="final.html">Project</a></div>
+    <small>© <span data-year></span> ZEIV</small>
+  </footer>
+
+  <dialog class="tourism-dialog" id="tourism-detail-dialog" aria-labelledby="tourism-modal-title" data-tourism-modal data-tourism-dialog>
+      <button class="tourism-modal-close" type="button" aria-label="관광지 상세 팝업 닫기" data-modal-close>
+        <span></span><span></span>
+      </button>
+
+      <div class="tourism-modal-layout">
+        <aside class="tourism-modal-nav" aria-label="상세 정보 카테고리">
+          <div class="tourism-nav-head">
+            <small>Main category</small>
+            <strong data-modal-nav-title>Destination</strong>
+          </div>
+          <nav>
+            <button class="is-active" type="button" data-modal-section="modal-overview" aria-current="true"><span>01</span>홈</button>
+            <button type="button" data-modal-section="modal-programs"><span>02</span>체험 프로그램</button>
+            <button type="button" data-modal-section="modal-reviews"><span>03</span>방문자 후기</button>
+          </nav>
+          <p>BUSAN TOURISM<br>RESEARCH ARCHIVE</p>
+        </aside>
+
+        <div class="tourism-modal-content" data-modal-scroll>
+          <section class="tourism-overview" id="modal-overview" data-modal-observe>
+            <div class="tourism-title-row">
+              <div>
+                <p class="tourism-kicker" data-modal-kicker></p>
+                <h2 id="tourism-modal-title" data-modal-title></h2>
+                <p class="tourism-subtitle" data-modal-subtitle></p>
+              </div>
+              <span class="tourism-location" data-modal-location></span>
+            </div>
+
+            <div class="tourism-gallery" data-tourism-gallery>
+              <div class="tourism-gallery-viewport" data-gallery-viewport tabindex="0" aria-label="장소 이미지 갤러리. 좌우 방향키 또는 드래그로 이동할 수 있습니다.">
+                <div class="tourism-gallery-track" data-gallery-track></div>
+              </div>
+              <button class="tourism-gallery-arrow is-prev" type="button" aria-label="이전 이미지" data-gallery-prev>←</button>
+              <button class="tourism-gallery-arrow is-next" type="button" aria-label="다음 이미지" data-gallery-next>→</button>
+              <div class="tourism-gallery-footer">
+                <div class="tourism-gallery-dots" data-gallery-dots aria-label="이미지 선택"></div>
+                <span><b data-gallery-current>01</b> / <span data-gallery-total>03</span></span>
+                <small>Drag or swipe</small>
+              </div>
+            </div>
+
+            <blockquote data-modal-quote></blockquote>
+            <div class="tourism-facts" data-modal-facts></div>
+          </section>
+
+          <section class="tourism-detail-section" id="modal-programs" data-modal-observe>
+            <div class="tourism-section-heading">
+              <div><span>Experience 02</span><h3>체험 프로그램</h3></div>
+              <p data-modal-program-intro></p>
+            </div>
+            <div class="tourism-program-grid" data-modal-programs></div>
+          </section>
+
+          <section class="tourism-detail-section tourism-review-section" id="modal-reviews" data-modal-observe>
+            <div class="tourism-section-heading">
+              <div><span>Review 03</span><h3>방문자 후기</h3></div>
+              <div class="tourism-rating"><strong data-modal-rating></strong><span>기획용 샘플 후기</span></div>
+            </div>
+            <div class="tourism-review-list" data-modal-reviews></div>
+          </section>
+
+          <footer class="tourism-source">
+            <span>Image source</span>
+            <p><span data-modal-credit></span> <a data-modal-source href="#" target="_blank" rel="noreferrer">원문 보기 ↗</a></p>
+          </footer>
+        </div>
+      </div>
+  </dialog>
+</body>
+</html>

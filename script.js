@@ -408,7 +408,52 @@
     if (current) setActiveModalSection(current.id);
   }, { passive: true });
 
+  const serviceDialog = document.querySelector('[data-service-dialog]');
+  const serviceOpenButtons = document.querySelectorAll('[data-service-open]');
+  let serviceDialogTrigger = null;
+
+  function openServiceDialog(trigger) {
+    if (!serviceDialog) return;
+    serviceDialogTrigger = trigger;
+    if (!serviceDialog.open) {
+      if (typeof serviceDialog.showModal === 'function') serviceDialog.showModal();
+      else serviceDialog.setAttribute('open', '');
+    }
+    document.body.classList.add('service-modal-open');
+    requestAnimationFrame(() => serviceDialog.classList.add('is-open'));
+  }
+
+  function closeServiceDialog() {
+    if (!serviceDialog?.open) return;
+    serviceDialog.classList.remove('is-open');
+    document.body.classList.remove('service-modal-open');
+    window.setTimeout(() => {
+      if (serviceDialog.open && typeof serviceDialog.close === 'function') serviceDialog.close();
+      else serviceDialog.removeAttribute('open');
+      serviceDialogTrigger?.focus();
+      serviceDialogTrigger = null;
+    }, 240);
+  }
+
+  serviceOpenButtons.forEach((button) => button.addEventListener('click', () => openServiceDialog(button)));
+  serviceDialog?.querySelector('[data-service-close]')?.addEventListener('click', closeServiceDialog);
+  serviceDialog?.querySelector('[data-service-summary]')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    const summary = serviceDialog.querySelector('#tumse-summary');
+    summary?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    summary?.focus({ preventScroll: true });
+  });
+  serviceDialog?.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeServiceDialog();
+  });
+  serviceDialog?.addEventListener('click', (event) => {
+    if (event.target === serviceDialog) closeServiceDialog();
+  });
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && tourismModal?.open) closeTourismModal();
+    if (event.key !== 'Escape') return;
+    if (serviceDialog?.open) closeServiceDialog();
+    else if (tourismModal?.open) closeTourismModal();
   });
 })();

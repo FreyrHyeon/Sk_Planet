@@ -7,6 +7,7 @@ ZEIV-portfolio/
 ├── index.html       # 메인: 소개, 대표 프로젝트, 수상·뉴스 미리보기
 ├── about.html       # 소개, 직무, 한 줄 소개, 소개글, Skills, 경력
 ├── project.html     # Project 1/2 상세 정보와 카테고리 필터
+├── service.html     # Service 소개와 TUMSE 상세 팝업
 ├── awards.html      # 수상 및 주요 활동
 ├── news.html        # 소식 및 업데이트
 ├── style.css        # Astryx-inspired 토큰 + 공통 컴포넌트 + 반응형
@@ -34,6 +35,7 @@ flowchart TD
 - 이름과 기본 소개: 모든 HTML의 로고 및 `index.html`, `about.html`
 - 직무·한 줄 소개·소개글·Skills·경력: `about.html`
 - 프로젝트명·설명·역할·주요 작업·결과: `project.html`
+- 서비스 카드·TUMSE 팝업 내용: `service.html`
 - 수상: `awards.html`
 - 소식: `news.html`
 - 이메일: 모든 HTML의 `hello@zeiv.com`

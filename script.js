@@ -45,6 +45,52 @@
   document.querySelector(`[data-nav="${currentPage}"]`)?.setAttribute('aria-current', 'page');
   document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
 
+  const showcase = document.querySelector('[data-home-showcase]');
+  if (showcase) {
+    const slides = [...showcase.querySelectorAll('[data-showcase-slide]')];
+    const dots = [...showcase.querySelectorAll('[data-showcase-dot]')];
+    const count = showcase.querySelector('[data-showcase-count]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let activeSlide = 0;
+    let showcaseTimer;
+    let paused = false;
+
+    function showSlide(index) {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === activeSlide;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+        slide.tabIndex = active ? 0 : -1;
+      });
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === activeSlide;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-current', String(active));
+      });
+      if (count) count.innerHTML = `${String(activeSlide + 1).padStart(2, '0')} <i>/</i> ${String(slides.length).padStart(2, '0')}`;
+    }
+
+    function stopShowcase() { window.clearInterval(showcaseTimer); showcaseTimer = undefined; }
+    function startShowcase() {
+      stopShowcase();
+      if (!paused && !reducedMotion.matches && !document.hidden) {
+        showcaseTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+      }
+    }
+    showcase.querySelector('[data-showcase-prev]')?.addEventListener('click', () => { showSlide(activeSlide - 1); startShowcase(); });
+    showcase.querySelector('[data-showcase-next]')?.addEventListener('click', () => { showSlide(activeSlide + 1); startShowcase(); });
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); startShowcase(); }));
+    showcase.addEventListener('mouseenter', () => { paused = true; stopShowcase(); });
+    showcase.addEventListener('mouseleave', () => { paused = false; startShowcase(); });
+    showcase.addEventListener('focusin', () => { paused = true; stopShowcase(); });
+    showcase.addEventListener('focusout', (event) => { if (!showcase.contains(event.relatedTarget)) { paused = false; startShowcase(); } });
+    document.addEventListener('visibilitychange', startShowcase);
+    reducedMotion.addEventListener?.('change', startShowcase);
+    showSlide(0);
+    startShowcase();
+  }
+
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
